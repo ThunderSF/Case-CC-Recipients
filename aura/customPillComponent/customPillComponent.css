@@ -1,0 +1,29 @@
+.THIS{
+    border-width: var(--sds-c-pill-sizing-border, var(--lwc-borderWidthThin,1px));
+    border-style: solid;
+    border-color: var(--sds-c-pill-color-border, var(--lwc-colorBorder,rgb(221, 219, 218)));
+    border-radius: var(--sds-c-pill-radius-border, var(--lwc-borderRadiusMedium,0.25rem));
+    background-color: var(--sds-c-pill-container-color-background, var(--lwc-colorBackgroundInput,rgb(255, 255, 255)));
+    padding: 5px;
+}
+.THIS .pill-item-size,.THIS .input-container {
+    width : 100%
+}
+
+.THIS .pill-container{
+    font-size: medium;
+    margin: .5px;
+}
+.THIS .slds-pill_container{
+    background: none;
+    border: none;
+}
+.THIS .slds-listbox_horizontal li+li, 
+.THIS .slds-listbox--horizontal li+li{
+    margin-top: 2px;
+}
+.THIS .slds-input{
+	border: none;
+    outline: none;
+    box-shadow: none;                          
+}

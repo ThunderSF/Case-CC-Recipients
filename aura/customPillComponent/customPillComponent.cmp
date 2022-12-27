@@ -1,0 +1,34 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller ="customPillController_Class">
+     <aura:attribute name="name" type="String" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="strText" type="String"/> 
+    <aura:attribute name="pills" type="List" default="[]" access="public"/>
+    <aura:attribute name="showpill" type="boolean" default = "false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="loading" type="Boolean" default = "false"/>
+    
+    
+        <lightning:card>
+        <aura:set attribute="title">
+            <lightning:icon iconName="standard:email" size="small" class="slds-m-right_x-small" />
+            CC Email Recipients
+            </aura:set>
+        
+        
+        <aura:if isTrue="{!and(v.showpill,not(empty(v.pills)))}">
+            <lightning:pillContainer items="{!v.pills}" onitemremove="{!c.handleRemove}">
+            </lightning:pillContainer>
+            
+        </aura:if>
+        
+        <span onkeypress="{!c.callKeyEnter}">
+            <lightning:input id="{!v.name}" placeholder="Enter Email and Press Enter to add"  
+                             variant="label-hidden"
+                             disabled = "{!v.pills.length>4}"
+                             value="{!v.strText}" />
+        </span>
+        
+       
+            </lightning:card>
+   
+   </aura:component>
